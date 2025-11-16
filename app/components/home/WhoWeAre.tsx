@@ -40,7 +40,7 @@ export default function WhoWeAre() {
           {/* LEFT PART (65%) Start*/}
           <div className="relative w-full h-[26rem] rounded-l-lg overflow-hidden shadow-xl">
             <Image
-              src="/homePage/WhoWeAre.png"
+              src="/homePage/whoWeAre.png"
               alt="Who We Are"
               fill
               className="object-cover object-center transition-transform duration-700 hover:scale-105"
