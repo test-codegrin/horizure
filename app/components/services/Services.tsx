@@ -24,9 +24,9 @@ const iconMap = {
   settings: Settings,
 } as const satisfies Record<string, React.ComponentType<any>>;
 
-/* ==========================================================
+/* 
     DYNAMIC SERVICE DATA WITH ICON KEYS
-========================================================== */
+ */
 const servicesData = [
   {
     title: "User Experience (UX) Design",
