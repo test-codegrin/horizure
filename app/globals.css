@@ -30,30 +30,72 @@ body {
 }
 
 
+:root {
+  --slider-duration: 55s; /* faster than 70s but smoother */
+}
+
 @keyframes slide-left {
   0% {
-    transform: translate3d(0, 0, 0);
+    transform: translateX(0);
   }
   100% {
-    transform: translate3d(-100%, 0, 0);
+    transform: translateX(-50%); /* instead of -100% */
   }
 }
 
 @keyframes slide-right {
   0% {
-    transform: translate3d(-100%, 0, 0);
+    transform: translateX(-50%);
   }
   100% {
-    transform: translate3d(0, 0, 0);
+    transform: translateX(0);
   }
 }
 
 .animate-slide-left {
-  animation: slide-left 70s linear infinite;
+  animation: slide-left var(--slider-duration) linear infinite;
   will-change: transform;
 }
 
 .animate-slide-right {
-  animation: slide-right 70s linear infinite;
+  animation: slide-right var(--slider-duration) linear infinite;
   will-change: transform;
 }
+
+/* Pause the animation when the slider is NOT visible */
+.slider-wrapper:not(.in-view) .animate-slide-left,
+.slider-wrapper:not(.in-view) .animate-slide-right {
+  animation-play-state: paused;
+}
+
+/* Use GPU accelerated transforms only */
+@keyframes floatSoft {
+  0%   { transform: translate3d(0, 0, 0); }
+  50%  { transform: translate3d(12px, -18px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes floatSoftReverse {
+  0%   { transform: translate3d(0, 0, 0); }
+  50%  { transform: translate3d(-12px, 16px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes floatSoftUpDown {
+  0%   { transform: translate3d(0, 0, 0); }
+  50%  { transform: translate3d(0, -14px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+/* Touching only transform → extremely low CPU usage */
+.float-1 {
+  animation: floatSoft 6s ease-in-out infinite;
+}
+.float-2 {
+  animation: floatSoftReverse 7.5s ease-in-out infinite;
+}
+.float-3 {
+  animation: floatSoftUpDown 8s ease-in-out infinite;
+}
+
+

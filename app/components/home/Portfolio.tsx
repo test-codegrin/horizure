@@ -1,31 +1,72 @@
 "use client";
-import Image from "next/image";
 
-export default function Portfolio() {
-  // Images Array 
-  const images = [
-    "/homePage/p1.png",
-    "/homePage/p2.png",
-    "/homePage/p3.png",
-    "/homePage/p4.png",
-    "/homePage/p5.png",
-    "/homePage/p6.png",
-  ];
+import Image from "next/image";
+import React, { useRef, useEffect } from "react";
+
+// Images (imported once – no re-render cost)
+const images = [
+  "/homePage/p1.webp",
+  "/homePage/p2.webp",
+  "/homePage/p3.webp",
+  "/homePage/p4.webp",
+  "/homePage/p5.webp",
+  "/homePage/p6.webp",
+];
+
+// Duplicate images once (not inside component)
+const sliderImages = [...images, ...images];
+
+/* 
+   Hook to Detect When Slider is In View
+   */
+function useInView() {
+  const ref = useRef<HTMLDivElement | null>(null); 
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return; // ← prevents classList errors
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+
+        // extra safety checks
+        const node = ref.current;
+        if (!node) return;
+
+        if (entry.isIntersecting) {
+          node.classList.add("in-view");
+        } else {
+          node.classList.remove("in-view");
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(el);
+
+    return () => {
+      const node = ref.current;
+      if (node) observer.unobserve(node);
+      observer.disconnect();
+    };
+  }, []);
+
+  return ref;
+}
+
+function Portfolio() {
+  const sliderRef = useInView(); // attach observer
+  const sliderRef2 = useInView(); // 2nd slider
 
   return (
-    <section className="w-full bg-black text-white py-24 flex justify-center ">
+    <section className="w-full bg-black text-white py-24 flex justify-center">
       <div
         className="
           w-full
-          mx-6        /* Mobile */
-          sm:mx-6     /* Small screens */
-          md:mx-12    /* Tablets */
-          lg:mx-36    /* Laptops */
-          xl:mx-48    /* Desktops */
-          2xl:mx-60   /* Large screens */
+          mx-6 sm:mx-6 md:mx-12 lg:mx-36 xl:mx-48 2xl:mx-60
         "
       >
-
         {/* Title Section */}
         <div className="text-center mb-14">
           <p className="text-sm uppercase tracking-widest text-gray-400">
@@ -37,58 +78,65 @@ export default function Portfolio() {
           </h2>
 
           <p className="text-gray-400 mt-3 max-w-2xl mx-auto px-4">
-            Amet minim dolore non proident ullamco nisi sit aliqua esse do
-            amet elit. Velit officia consequat irure enim velit dolore.
+            Amet minim dolore non proident ullamco nisi sit aliqua esse do amet elit.
+            Velit officia consequat irure enim velit dolore.
           </p>
         </div>
 
-        {/* SLIDER 1 — Right -> Left  Start*/}
-        <div className="relative w-full mb-2">
-
+        {/* SLIDER 1 - Right to Left */}
+        <div className="relative w-full mb-2 slider-wrapper" ref={sliderRef}>
           <div className="overflow-hidden w-full">
             <div className="flex gap-4 animate-slide-left whitespace-nowrap">
-              {[...images, ...images].map((src, i) => (
-                <div key={i} className="w-[350px] h-[220px] relative flex-shrink-0">
+              {sliderImages.map((src, i) => (
+                <div
+                  key={`s1-${i}`}
+                  className="w-[350px] h-[220px] relative flex-shrink-0"
+                >
                   <Image
                     src={src}
-                    alt={`Portfolio ${i}`}
+                    alt={`Portfolio-${i}`}
                     fill
                     className="object-cover rounded-lg"
+                    loading="lazy"
+                    sizes="350px"
                   />
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Overlapping Button */}
+          {/* CTA Button */}
           <div className="absolute left-1/2 -bottom-10 -translate-x-1/2 z-[5]">
             <button className="border bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white px-6 py-3 rounded-md shadow-xl text-sm flex items-center space-x-2">
               <span>View All Projects</span>
               <span className="text-lg">→</span>
             </button>
           </div>
-
         </div>
-        {/* SLIDER 1 — Right -> Left End*/}
 
-        {/* SLIDER 2 — Left -> Right Start*/}
-        <div className="overflow-hidden w-full mt-6">
+        {/* SLIDER 2 - Left to Right */}
+        <div className="overflow-hidden w-full mt-6 slider-wrapper" ref={sliderRef2}>
           <div className="flex gap-4 animate-slide-right whitespace-nowrap">
-            {[...images, ...images].map((src, i) => (
-              <div key={i} className="w-[350px] h-[220px] relative flex-shrink-0">
+            {sliderImages.map((src, i) => (
+              <div
+                key={`s2-${i}`}
+                className="w-[350px] h-[220px] relative flex-shrink-0"
+              >
                 <Image
                   src={src}
-                  alt={`Portfolio ${i}`}
+                  alt={`Portfolio-${i}`}
                   fill
                   className="object-cover rounded-lg"
+                  loading="lazy"
+                  sizes="350px"
                 />
               </div>
             ))}
           </div>
         </div>
-        {/* SLIDER 2 — Left -> Right End*/}
-
       </div>
     </section>
   );
 }
+
+export default React.memo(Portfolio);

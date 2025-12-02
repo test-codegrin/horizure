@@ -1,38 +1,36 @@
 "use client";
 import Image from "next/image";
 
-export default function OurTeam() {
-  //Array for the details of the team members
+export default function Ourteam() {
   const team = [
     {
       name: "Web Designer",
-      img: "/homePage/teammember1.png",
-      desc: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
-    },
-    {
-      
-      name: "Backend Developer",
-      img: "/homePage/teammember1.png",
+      img: "/homePage/teammember1.webp",
       desc: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
     },
     {
       name: "Backend Developer",
-      img: "/homePage/teammember2.png",
+      img: "/homePage/teammember1.webp",
       desc: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
     },
     {
       name: "Backend Developer",
-      img: "/homePage/teammember2.png",
+      img: "/homePage/teammember2.webp",
+      desc: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
+    },
+    {
+      name: "Backend Developer",
+      img: "/homePage/teammember2.webp",
       desc: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
     },
     {
       name: "UI & UX Design",
-      img: "/homePage/teammember2.png",
+      img: "/homePage/teammember2.webp",
       desc: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
     },
     {
       name: "Graphic Design",
-      img: "/homePage/teammember3.png",
+      img: "/homePage/teammember3.webp",
       desc: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
     },
   ];
@@ -45,6 +43,7 @@ export default function OurTeam() {
           mx-4 sm:mx-6 md:mx-12 lg:mx-36 xl:mx-48 2xl:mx-60
         "
       >
+
         {/* Title Section */}
         <div className="text-center mb-16">
           <p className="text-sm uppercase tracking-widest text-gray-400">
@@ -64,22 +63,25 @@ export default function OurTeam() {
         {/* TEAM GRID */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-12 justify-items-center">
           {team.map((member, i) => (
-            <div key={i} className="flex flex-col items-center text-center">
+            <div key={member.name + i} className="flex flex-col items-center text-center">
 
-              {/* IMAGE — RESPONSIVE SIZES */}
-              <div className="
-                w-[110px] h-[150px]           /* mobile */
-                sm:w-[130px] sm:h-[170px]     /* small screens */
-                md:w-[150px] md:h-[190px]     /* tablets */
-                lg:w-[160px] lg:h-[200px]     /* laptops+ */
-                flex items-end justify-center
-              ">
+              {/* IMAGE — responsive container */}
+              <div
+                className="
+                  w-[110px] h-[150px]
+                  sm:w-[130px] sm:h-[170px]
+                  md:w-[150px] md:h-[190px]
+                  lg:w-[160px] lg:h-[200px]
+                  flex items-end justify-center
+                "
+              >
                 <Image
                   src={member.img}
                   alt={member.name}
-                  width={180}
-                  height={200}
+                  width={200}
+                  height={240}
                   className="object-contain"
+                  loading="lazy"
                 />
               </div>
 
@@ -88,7 +90,7 @@ export default function OurTeam() {
                 {member.name}
               </h3>
 
-              {/* DESC */}
+              {/* DESCRIPTION */}
               <p className="text-gray-400 text-xs mt-2 leading-relaxed px-2">
                 {member.desc}
               </p>

@@ -7,7 +7,7 @@ export default function Articles() {
 
       {/* Rings — show ONLY on lg+ */}
       <Image
-        src="/homePage/articles-ring.png"
+        src="/homePage/articles-ring.webp"
         width={220}
         height={220}
         alt="ring"
@@ -15,7 +15,7 @@ export default function Articles() {
       />
 
       <Image
-        src="/homePage/articles-ring.png"
+        src="/homePage/articles-ring.webp"
         width={220}
         height={220}
         alt="ring"
@@ -76,7 +76,7 @@ export default function Articles() {
             {/* Comp2 - Avatar Image*/}
             <div className="relative w-80 h-80 border-2 border-white ">
               <img
-                src="./homePage/blog-Avatar.png"
+                src="./homePage/blog-Avatar.webp"
                 alt="avatar-img"
                 className="w-full h-full object-cover"
               />
@@ -143,7 +143,7 @@ export default function Articles() {
             {/* Avatar Image Tablet & Mobile*/}
             <div className="w-full h-80 border-2 border-white">
               <img
-                src="./homePage/blog-Avatar.png"
+                src="./homePage/blog-Avatar.webp"
                 alt="avatar-img"
                 className="w-full h-full object-cover"
               />
