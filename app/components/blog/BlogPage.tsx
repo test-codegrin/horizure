@@ -25,7 +25,7 @@ export default function BlogPage() {
 
       {/* ================== LOOP ALL BLOGS =================== */}
       {blogData.map((blog, i) => (
-        <div key={i} className="mb-24">
+        <div key={i} className="lg:mb-24">
 
           {/* ------------------ BLOG HERO ------------------ */}
           <div className="relative w-full h-[300px] sm:h-[420px] md:h-[500px] lg:h-[580px] overflow-hidden">
@@ -71,7 +71,7 @@ export default function BlogPage() {
 
           {/* Divider between blogs */}
           {i !== blogData.length - 1 && (
-            <hr className="border-white/10 mb-20" />
+            <hr className="border-white/10 lg:mb-20 mb-5" />
           )}
         </div>
       ))}

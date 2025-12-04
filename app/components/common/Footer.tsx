@@ -130,7 +130,7 @@ function Footer() {
           </div>
 
           {/* BLOGS */}
-          <div className="text-center sm:text-left">
+          <div className="text-center sm:text-left md:pl-6">
             <h3 className="font-semibold mb-4 text-sm">Blogs</h3>
 
             <ul className="space-y-2 text-sm text-gray-300">

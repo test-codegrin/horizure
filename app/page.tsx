@@ -7,7 +7,7 @@ import Services from "./components/home/Services";
 import Ourteam from "./components/home/Ourteam";
 import Articles from "./components/home/Articles";
 import CustomerReview from "./components/home/CustomerReview";
-import ContactForm from "./components/home/ContactForm";
+import ContactForm from "./components/home/ContactFormHome";
 import Footer from "./components/common/Footer";
 
 export default function Home() {

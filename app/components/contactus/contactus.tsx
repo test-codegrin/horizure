@@ -2,17 +2,21 @@
 
 import Image from "next/image";
 import React from "react";
+import ContactForm from "../common/ContactForm";
 
 export default function ContactUs() {
   return (
-    <section className="w-full bg-black text-white py-20 sm:py-28 relative overflow-hidden mt-10 lg:mt-25 lg:px-15">
+    <section className="w-full bg-black text-white py-20 sm:py-28 relative overflow-hidden mt-10 lg:mt-5 lg:px-15">
 
       {/* ---- BLUE BACKGROUND CIRCLE ---- */}
-      <div className="
-  hidden lg:block 
-  absolute top-1/2 right-[32%] -translate-y-1/2 
-  w-[520px] h-[520px] bg-[#0ea5e9] rounded-full opacity-90
-"></div>
+    <div
+  className="
+    hidden lg:block 
+    absolute top-1/2 right-[35%] -translate-y-1/2
+    w-[420px] h-[420px] bg-[#0ea5e9] rounded-full opacity-90
+    animate-down-up-bounce
+  "
+></div>
 
       {/* ---- BOTTOM VECTOR UNDER FORM ---- */}
       <Image
@@ -39,7 +43,7 @@ export default function ContactUs() {
       ">
 
         {/* LEFT SIDE TEXT */}
-        <div>
+        <div className="lg:mt-25">
 
           {/* Cube Vector */}
           <Image
@@ -50,7 +54,7 @@ export default function ContactUs() {
             className="mb-6 w-[55px] sm:w-[70px] md:w-[80px] lg:w-[90px]"
           />
 
-          <p className="text-sm sm:text-base text-gray-300 mb-3">
+          <p className="text-sm text-right sm:text-base text-gray-300 mb-3 absolute right-[680px] top-[1px] z-10">
             Project stuck on “loading...”? <br />
             Let’s speed things up and get you running at full power.
           </p>
@@ -60,7 +64,7 @@ export default function ContactUs() {
             text-4xl sm:text-5xl md:text-6xl
           ">
             WE’RE JUST <br />
-            A MESSAGE <br />
+            A <span className="text-[#0ea5e9]">MESSAGE</span> <br />
             AWAY!
           </h2>
 
@@ -96,67 +100,7 @@ export default function ContactUs() {
               Fill out the form below, and our team will get back to you promptly.
               Let's connect and create solutions together.
             </p>
-
-            {/* FORM START */}
-            <form className="space-y-5">
-
-              <input
-                type="text"
-                placeholder="Enter your full name"
-                className="w-full bg-white/20 border border-white/30 px-4 py-3 rounded-md
-                focus:outline-none focus:border-blue-400 placeholder-gray-300"
-              />
-
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="w-full bg-white/20 border border-white/30 px-4 py-3 rounded-md
-                focus:outline-none focus:border-blue-400 placeholder-gray-300"
-              />
-
-              {/* Phone */}
-              <div className="flex gap-3 flex-col sm:flex-row">
-                <select className="
-                  w-full sm:w-[90px] 
-                  bg-white/20 border border-white/30 px-4 py-3 rounded-md
-                ">
-                  <option>+91</option>
-                </select>
-
-                <input
-                  type="text"
-                  placeholder="Enter your contact number"
-                  className="flex-1 bg-white/20 border border-white/30 px-4 py-3 rounded-md 
-                  focus:outline-none focus:border-blue-400 placeholder-gray-300"
-                />
-              </div>
-
-              {/* Service dropdown */}
-              <select className="w-full bg-white/20 border border-white/30 px-4 py-3 rounded-md">
-                <option>Select</option>
-              </select>
-
-              {/* Message */}
-              <textarea
-                rows={4}
-                placeholder="Enter your message here"
-                className="w-full bg-white/20 border border-white/30 px-4 py-3 rounded-md
-                focus:outline-none focus:border-blue-400 placeholder-gray-300"
-              />
-
-              {/* Submit Button */}
-              <button className="
-                bg-gradient-to-r from-sky-500 to-blue-600 
-                hover:from-sky-400 hover:to-blue-500
-                text-white px-6 py-3 rounded-md shadow-md 
-                w-full sm:w-auto
-                transition flex items-center justify-center gap-2
-              ">
-                Submit →
-              </button>
-
-            </form>
-
+            <ContactForm />
           </div>
         </div>
       </div>

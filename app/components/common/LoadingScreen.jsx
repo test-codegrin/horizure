@@ -22,7 +22,7 @@ export default function LoadingScreen() {
       className={`
         fixed inset-0 bg-black z-[9999]
         flex flex-col items-center justify-center
-        transition-opacity duration-700 ease-out
+        transition-opacity duration-700 
         ${isDone ? "opacity-0 pointer-events-none" : "opacity-100"}
       `}
     >
@@ -52,7 +52,7 @@ export default function LoadingScreen() {
           width: 120px !important;
           height: 120px !important;
           top: 65px;   /* centered */
-  left: 65px;  /* centered */
+          left: 65px;  /* centered */
           display: block !important;
           background-image: url(/contactus/box.png);
           background-size: contain;
@@ -167,7 +167,7 @@ export default function LoadingScreen() {
           overflow: hidden;
           white-space: nowrap;
           border-right: 2px solid #0ea5e9;
-          animation: typing 1.3s steps(40), blink 0.7s step-end infinite;
+          animation: typing 1.5s steps(40), blink 0.7s step-end infinite;
         }
         @keyframes typing {
           from {

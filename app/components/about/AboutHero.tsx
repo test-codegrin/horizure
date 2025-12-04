@@ -49,17 +49,25 @@ export default function AboutHero() {
       </div>
 
       {/* FLOATING SHAPES  */}
-
+    {/* floating star */}
       <div className="hidden sm:block absolute left-[32%] top-[16%] text-blue-400 text-5xl float-1">★</div>
 
-      <div className="hidden sm:block absolute left-20 top-[35%] w-12 h-12 bg-gradient-to-b from-[#68d1ff] to-[#007edb] 
-        rounded-full float-2"></div>
+      {/* Blue bouncing ball(circle) left side*/}
+      <div className="animate-down-up-bounce hidden sm:block absolute left-20 top-[35%] w-12 h-12 bg-gradient-to-b from-[#68d1ff] to-[#007edb] 
+        rounded-full "></div>
+        {/* shadow below the left ball */}
+        <div className="shadow-bounce w-[140px] h-[18px]  absolute left-10 top-[63%] bg-white/40 rounded-full blur-[15px]"></div>
 
+      {/* blue dot on the screen floating */}
       <div className="hidden sm:block absolute left-[24%] top-[55%] w-3 h-3 bg-[#1db3ff] rounded-full float-3"></div>
 
-      <div className="hidden sm:block absolute right-32 top-[20%] w-12 h-12 bg-gradient-to-b from-[#68d1ff] to-[#007edb] 
-        rounded-full float-1"></div>
+        {/* Blue bouncing ball(circle) right side*/}
+      <div className="animate-down-up-bounce hidden sm:block absolute right-32 top-[20%] w-12 h-12 bg-gradient-to-b from-[#68d1ff] to-[#007edb] 
+        rounded-full "></div>
+        {/* shadow below the right ball */}
+        <div className="shadow-bounce w-[140px] h-[18px]  absolute right-19 top-[48%] bg-white/40 rounded-full blur-[15px]"></div>
 
+      {/* floating star */}
       <div className="hidden sm:block absolute right-12 bottom-30 text-blue-400 text-5xl float-2">★</div>
 
     </section>

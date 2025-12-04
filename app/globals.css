@@ -34,6 +34,7 @@ body {
   --slider-duration: 55s; /* faster than 70s but smoother */
 }
 
+/* ================================== home page slide animation Start =================================== */
 @keyframes slide-left {
   0% {
     transform: translateX(0);
@@ -67,7 +68,10 @@ body {
 .slider-wrapper:not(.in-view) .animate-slide-right {
   animation-play-state: paused;
 }
+/* ================================== (home page) slide animation END =================================== */
 
+
+/* ================================== (about us) floating balls animation Start =================================== */
 /* Use GPU accelerated transforms only */
 @keyframes floatSoft {
   0%   { transform: translate3d(0, 0, 0); }
@@ -87,7 +91,7 @@ body {
   100% { transform: translate3d(0, 0, 0); }
 }
 
-/* Touching only transform → extremely low CPU usage */
+
 .float-1 {
   animation: floatSoft 6s ease-in-out infinite;
 }
@@ -96,12 +100,37 @@ body {
 }
 .float-3 {
   animation: floatSoftUpDown 8s ease-in-out infinite;
+
+}
+/* ================================== (about us) floating balls animation END =================================== */
+
+/* ================================== (about us) shadow below the balls animation Start =================================== */
+@keyframes shadowBounce {
+  0% {
+    transform: scaleX(1) scaleY(1);
+    
+  }
+
+  /* Shadow widens when ball squashes */
+  50% {
+    transform: scaleX(1.45) scaleY(0.85);
+    
+  }
+
+  100% {
+    transform: scaleX(1) scaleY(1);
+    
+  }
 }
 
-/* ==========================
-   Custom Orbit Animations
-========================== */
+.shadow-bounce {
+  animation: shadowBounce 2s cubic-bezier(0.35, 0.7, 0.38, 1) infinite;
+}
+/* ================================== (about us )shadow below the balls animation End =================================== */
 
+
+
+/* ================================== Custom Orbit Animations(services page) START ============================================= */
 @keyframes spin-slow {
   from {
     transform: rotate(0deg);
@@ -120,7 +149,7 @@ body {
   }
 }
 
-/* Tailwind utility classes */
+
 .animate-spin-slow {
   animation: spin-slow 20s linear infinite;
 }
@@ -129,19 +158,36 @@ body {
   animation: spin-reverse 20s linear infinite;
 }
 
+/* ========================== Custom Orbit Animations(services page) END ========================== */
+   
 
-@keyframes stageFade {
-  0% { opacity: 0; transform: scale(0.85); }
-  20% { opacity: 1; transform: scale(1); }
-  70% { opacity: 1; transform: scale(1); }
-  100% { opacity: 0; transform: scale(0.9); }
+
+
+
+/*---------------------------------------- (contactus page) blue circle animation Start------------------------------- */
+@keyframes downUpBounce {
+  0% {
+    transform: translateY(0) scale(1, 1);
+  }
+
+  /* Falling */
+  50% {
+    transform: translateY(230px) scale(1.25, 0.75); /* squash */
+  }
+
+  /* Settling back */
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
 }
 
-.stage {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
+.animate-down-up-bounce {
+  animation: downUpBounce 2s  infinite;
 }
+
+
+/*---------------------------------------- (contactus page) blue circle animation END------------------------------- */
+
+
+
 
