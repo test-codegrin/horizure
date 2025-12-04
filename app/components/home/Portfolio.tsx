@@ -1,8 +1,9 @@
 "use client";
 
+import { Link, Router } from "lucide-react";
 import Image from "next/image";
 import React, { useRef, useEffect } from "react";
-
+import { useRouter } from "next/navigation";
 // Images (imported once – no re-render cost)
 const images = [
   "/homePage/p1.webp",
@@ -59,6 +60,8 @@ function Portfolio() {
   const sliderRef = useInView(); // attach observer
   const sliderRef2 = useInView(); // 2nd slider
 
+  const router = useRouter();
+
   return (
     <section className="w-full bg-black text-white py-24 flex justify-center">
       <div
@@ -106,12 +109,17 @@ function Portfolio() {
           </div>
 
           {/* CTA Button */}
-          <div className="absolute left-1/2 -bottom-10 -translate-x-1/2 z-[5]">
-            <button className="border bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white px-6 py-3 rounded-md shadow-xl text-sm flex items-center space-x-2">
-              <span>View All Projects</span>
-              <span className="text-lg">→</span>
-            </button>
-          </div>
+<div className="absolute left-1/2 -bottom-10 -translate-x-1/2 z-[5]">
+      <button
+        onClick={() => router.push("/portfolio")}
+        className="border bg-gradient-to-r from-sky-500 to-blue-600 
+        hover:from-sky-400 hover:to-blue-500 text-white px-6 py-3 
+        rounded-md shadow-xl text-sm flex items-center space-x-2"
+      >
+        <span>View All Projects</span>
+        <span className="text-lg">→</span>
+      </button>
+    </div>
         </div>
 
         {/* SLIDER 2 - Left to Right */}

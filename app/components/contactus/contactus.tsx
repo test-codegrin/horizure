@@ -5,7 +5,7 @@ import React from "react";
 
 export default function ContactUs() {
   return (
-    <section className="w-full bg-black text-white py-20 sm:py-28 relative overflow-hidden lg:mt-25 lg:px-15">
+    <section className="w-full bg-black text-white py-20 sm:py-28 relative overflow-hidden mt-10 lg:mt-25 lg:px-15">
 
       {/* ---- BLUE BACKGROUND CIRCLE ---- */}
       <div className="

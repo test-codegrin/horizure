@@ -1,65 +1,167 @@
 "use client";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 
 export default function LoadingScreen() {
-  const [mounted, setMounted] = useState(false); 
+  const [mounted, setMounted] = useState(false);
   const [isDone, setIsDone] = useState(false);
 
   useEffect(() => {
-    
     setMounted(true);
 
     const t = setTimeout(() => {
       setIsDone(true);
-    }, 1800);
+    }, 3700);
 
     return () => clearTimeout(t);
   }, []);
 
-  if (!mounted) return null; 
+  if (!mounted) return null;
 
   return (
     <div
       className={`
         fixed inset-0 bg-black z-[9999]
         flex flex-col items-center justify-center
-        transition-opacity duration-800 ease-out
+        transition-opacity duration-700 ease-out
         ${isDone ? "opacity-0 pointer-events-none" : "opacity-100"}
       `}
     >
-      {/* Cube Icon */}
-      <div className="animate-spin-cube">
-        <Image
-          src="/contactus/box.png"
-          width={110}
-          height={110}
-          alt="Loading Cube"
-        />
+      {/* Cube Animation */}
+      <div className="relative w-[250px] h-[250px]">
+        <Cube id="c0" />
+        <Cube id="c1" />
+        <Cube id="c2" />
+        <Cube id="c3" />
+        <Cube id="c4" />
+        <Cube id="c5" />
+        <Cube id="c6" />
+        <Cube id="c7" />
+        <Cube id="c8" />
       </div>
 
       {/* Typewriter */}
-      <p className="mt-6 text-lg sm:text-xl text-gray-300">
+      <p className="mt-6 text-lg sm:text-xl text-gray-300 mt-10">
         <span className="typewriter">
-          Debugging reality … one moment
+          Debugging reality <span className="text-[#0ea5e9]">… one moment</span>
         </span>
       </p>
 
-      <style jsx>{`
-        /* Cube spin */
-        .animate-spin-cube {
-          animation: cubeRotate 3s infinite linear;
+      <style jsx global>{`
+        .cube {
+          position: absolute;
+          width: 120px !important;
+          height: 120px !important;
+          top: 65px;   /* centered */
+  left: 65px;  /* centered */
+          display: block !important;
+          background-image: url(/contactus/box.png);
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          will-change: transform;
+          animation: fullFlow 3.5s ease-in-out forwards;
         }
-        @keyframes cubeRotate {
+
+        @keyframes fullFlow {
           0% {
-            transform: rotateY(0deg);
+            transform: translate(0px, 0px);
+          }
+          20% {
+            transform: translate(var(--x2), var(--y2));
+          }
+          40% {
+            transform: translate(var(--x3), var(--y3));
+          }
+          60% {
+            transform: translate(var(--x4), var(--y4));
+          }
+          80% {
+            transform: translate(var(--x3), var(--y3));
+          }
+          90% {
+            transform: translate(var(--x2), var(--y2));
           }
           100% {
-            transform: rotateY(360deg);
+            transform: translate(0px, 0px);
           }
         }
 
-        /* Typewriter */
+        /* SAME POSITIONS — UNCHANGED */
+        #c4 {
+          --x2: 0px;
+          --y2: 0px;
+          --x3: 0px;
+          --y3: 0px;
+          --x4: 0px;
+          --y4: 0px;
+        }
+        #c1 {
+          --x2: -40px;
+          --y2: -40px;
+          --x3: -40px;
+          --y3: -40px;
+          --x4: -40px;
+          --y4: -40px;
+        }
+        #c0 {
+          --x2: -40px;
+          --y2: -40px;
+          --x3: -40px;
+          --y3: -70px;
+          --x4: -40px;
+          --y4: -70px;
+        }
+        #c2 {
+          --x2: -40px;
+          --y2: -40px;
+          --x3: -40px;
+          --y3: -10px;
+          --x4: -40px;
+          --y4: -10px;
+        }
+
+        #c7 {
+          --x2: 40px;
+          --y2: 40px;
+          --x3: 40px;
+          --y3: 40px;
+          --x4: 40px;
+          --y4: 40px;
+        }
+        #c6 {
+          --x2: 40px;
+          --y2: 40px;
+          --x3: 40px;
+          --y3: 70px;
+          --x4: 40px;
+          --y4: 70px;
+        }
+        #c8 {
+          --x2: 40px;
+          --y2: 40px;
+          --x3: 40px;
+          --y3: 10px;
+          --x4: 40px;
+          --y4: 10px;
+        }
+
+        #c3 {
+          --x2: 0px;
+          --y2: 0px;
+          --x3: 0px;
+          --y3: 0px;
+          --x4: -20px;
+          --y4: 40px;
+        }
+        #c5 {
+          --x2: 0px;
+          --y2: 0px;
+          --x3: 0px;
+          --y3: 0px;
+          --x4: 20px;
+          --y4: -40px;
+        }
+
         .typewriter {
           display: inline-block;
           overflow: hidden;
@@ -83,4 +185,8 @@ export default function LoadingScreen() {
       `}</style>
     </div>
   );
+}
+
+function Cube({ id }) {
+  return <div id={id} className="cube" />;
 }

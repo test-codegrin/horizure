@@ -15,12 +15,12 @@ const NavLinks = React.memo(function NavLinks({ pathname }: NavLinksProps) {
   const links = [
     { title: "HOME", href: "/" },
     { title: "SERVICES", href: "/services" },
-    
+
     { title: "PORTFOLIO", href: "/portfolio" },
     { title: "BLOG", href: "/blog" },
 
     { title: "ABOUT US", href: "/about" },
-    
+
     { title: "CONTACT US", href: "/contactus" },
   ];
 
@@ -83,10 +83,12 @@ function Nav() {
 
         {/* Desktop Button */}
         <div className="hidden lg:block">
-          <button className="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white text-sm px-5 py-2 rounded-md shadow-lg transition flex items-center space-x-1">
-            <span>Discuss for your Projects</span>
-            <span className="text-lg">→</span>
-          </button>
+          <Link href="/contactus">
+            <button className="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white text-sm px-5 py-2 rounded-md shadow-lg transition flex items-center space-x-1">
+              <span>Discuss for your Projects</span>
+              <span className="text-lg">→</span>
+            </button>
+          </Link>
         </div>
 
         {/* Hamburger */}
@@ -107,37 +109,48 @@ function Nav() {
         <div className="px-6 py-4 space-y-4">
           {/* Mobile Links */}
           <ul className="space-y-3">
-            {["/","/services",  "/portfolio","/blog", "/about", "/contactus"].map(
-              (href, index) => {
-                const title =
-                  ["HOME", "SERVICES", "PORTFOLIO","BLOGS", "ABOUT US", "CONTACT US"][
-                    index
-                  ];
-                const active = pathname === href;
+            {[
+              "/",
+              "/services",
+              "/portfolio",
+              "/blog",
+              "/about",
+              "/contactus",
+            ].map((href, index) => {
+              const title = [
+                "HOME",
+                "SERVICES",
+                "PORTFOLIO",
+                "BLOGS",
+                "ABOUT US",
+                "CONTACT US",
+              ][index];
+              const active = pathname === href;
 
-                return (
-                  <li key={href}>
-                    <Link
-                      href={href}
-                      className={
-                        active
-                          ? "text-blue-400"
-                          : "hover:text-blue-400 transition"
-                      }
-                    >
-                      {title}
-                    </Link>
-                  </li>
-                );
-              }
-            )}
+              return (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className={
+                      active
+                        ? "text-blue-400"
+                        : "hover:text-blue-400 transition"
+                    }
+                  >
+                    {title}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
 
-          {/* Mobile Button */}
-          <button className="w-full bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white text-sm px-5 py-2 rounded-md shadow-md transition flex justify-center items-center space-x-1">
-            <span>Discuss for your Projects</span>
-            <span className="text-lg">→</span>
-          </button>
+          {/* Mobile & Tablet Button */}
+          <Link href="/contactus" className="block lg:hidden">
+            <button className="w-full bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white text-sm px-5 py-2 rounded-md shadow-md transition flex justify-center items-center space-x-1">
+              <span>Discuss for your Projects</span>
+              <span className="text-lg">→</span>
+            </button>
+          </Link>
         </div>
       </div>
     </nav>

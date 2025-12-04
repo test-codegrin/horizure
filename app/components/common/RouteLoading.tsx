@@ -15,7 +15,7 @@ export default function RouteLoader({ children }: { children: ReactNode }) {
 
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1500); // match your loader fade timing
+    }, 3700); // match your loader fade timing
 
     return () => clearTimeout(timer);
   }, [pathname]);

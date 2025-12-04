@@ -88,9 +88,9 @@ export const servicesData = [
   // =============================
   {
     category: "User Experience (UX) Design",
-    slug: "user-research-and-persona-development",
+    slug: "user-research-and-personal-development",
     icon: "ux",
-    title: "User Research and Persona Development",
+    title: "User Research and Personal Development",
     description: [
       `In the digital world, understanding your audience is the key to creating products and experiences that truly resonate. Our User Research and Persona Development service helps businesses uncover insights about their target users, guiding strategic decisions and improving overall user experience. We start by conducting in-depth research using methods like interviews, surveys, analytics, and user testing to gather real data about your audience’s behaviours, needs, and preferences.`,
       `Based on these insights, we develop detailed user personas—representative profiles that capture audience goals, motivations, and challenges. By leveraging these personas, your team can make informed decisions ensuring that every feature, message, and interaction aligns with what your audience truly wants.`,
