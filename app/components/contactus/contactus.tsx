@@ -6,7 +6,7 @@ import ContactForm from "../common/ContactForm";
 
 export default function ContactUs() {
   return (
-    <section className="w-full bg-black text-white py-20 sm:py-28 relative overflow-hidden mt-10 lg:mt-5 lg:px-15">
+    <section className="w-full bg-black text-white py-20 sm:py-28 relative overflow-hidden mt-10 lg:mt-5 lg:px-12 md:px-0  ">
 
       {/* ---- BLUE BACKGROUND CIRCLE ---- */}
     <div
@@ -38,7 +38,7 @@ export default function ContactUs() {
       <div className="
         grid grid-cols-1 lg:grid-cols-2 
         items-start gap-16 lg:gap-20 
-        mx-6 sm:mx-10 md:mx-16 lg:mx-32 xl:mx-48 
+        mx-4 sm:mx-10 md:mx-13 lg:mx-32 xl:mx-48 
         relative z-10
       ">
 
@@ -54,7 +54,7 @@ export default function ContactUs() {
             className="mb-6 w-[55px] sm:w-[70px] md:w-[80px] lg:w-[90px]"
           />
 
-          <p className="text-sm text-right sm:text-base text-gray-300 mb-3 absolute right-[680px] top-[1px] z-10">
+          <p className="text-[11px] md:text-sm text-right sm:text text-gray-300 mb-3 lg:mr-[5px] absolute right-[0px] lg:right-[680px] md:right-[0px] lg:top-[1px] top-[36px]  z-10">
             Project stuck on “loading...”? <br />
             Let’s speed things up and get you running at full power.
           </p>

@@ -8,11 +8,27 @@ export default function LoadingScreen() {
   useEffect(() => {
     setMounted(true);
 
+    // Add class to hide scrollbar visually and via webkit
+    document.body.classList.add("hide-scrollbar");
+
+    // main timer for loading (same 3700ms you used)
     const t = setTimeout(() => {
       setIsDone(true);
+
+      // Wait for fade-out duration (700ms) before removing the class so scrollbar doesn't return mid-fade
+      const restore = setTimeout(() => {
+        document.body.classList.remove("hide-scrollbar");
+      }, 700);
+
+      // cleanup for the restore timeout
+      return () => clearTimeout(restore);
     }, 3700);
 
-    return () => clearTimeout(t);
+    return () => {
+      clearTimeout(t);
+      // safety: ensure class removed if component unmounts
+      document.body.classList.remove("hide-scrollbar");
+    };
   }, []);
 
   if (!mounted) return null;
@@ -47,6 +63,14 @@ export default function LoadingScreen() {
       </p>
 
       <style jsx global>{`
+        /* Hide scrollbar when body has this class */
+        .hide-scrollbar {
+          overflow: hidden !important;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+
         .cube {
           position: absolute;
           width: 120px !important;

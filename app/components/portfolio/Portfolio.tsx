@@ -33,7 +33,7 @@ export default function Portfolio() {
 
       {/* Loop all Projects */}
       {portfolioData.map((project, index) => (
-        <div key={index} className="max-w-[1460px] mx-auto mt-16 md:px-12 px-4 sm:px-6">
+        <div key={index} className="max-w-[1528px] mx-auto mt-16 md:px-13 px-4 sm:px-6">
           {/* Hero Image */}
           <div className="relative rounded-2xl border border-white/20 overflow-hidden">
             <Image
@@ -46,7 +46,7 @@ export default function Portfolio() {
           </div>
 
           {/* Title + Tags */}
-          <div className="mt-10 px-2">
+          <div className="mt-10 ">
             <a
               href={project.link}
               target="_blank"
@@ -56,11 +56,11 @@ export default function Portfolio() {
               <u>{project.title}</u>
             </a>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 ">
               {project.tags.map((tag, i) => (
                 <span
                   key={i}
-                  className="px-4 py-2 text-sm border rounded-full border-white/20"
+                  className="px-3 py-2 text-sm border rounded-full border-white/20"
                 >
                   {tag}
                 </span>
@@ -69,7 +69,7 @@ export default function Portfolio() {
           </div>
 
           {/* Expand Button */}
-          <div className="flex justify-end mt-6 px-2">
+          <div className="flex justify-end mt-6 ">
             <button
               onClick={() => toggleExpand(index)}
               className="flex items-center gap-3 text-gray-300 hover:text-white transition"

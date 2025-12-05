@@ -40,7 +40,7 @@ export default function Ourteam() {
       <div
         className="
           w-full 
-          mx-4 sm:mx-6 md:mx-12 lg:mx-36 xl:mx-48 2xl:mx-60
+          mx-4 sm:mx-6 md:mx-12  lg:mx-36 xl:mx-48 2xl:mx-60
         "
       >
 
@@ -61,7 +61,7 @@ export default function Ourteam() {
         </div>
 
         {/* TEAM GRID */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-12 justify-items-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-22 gap-14  justify-items-center">
           {team.map((member, i) => (
             <div key={member.name + i} className="flex flex-col items-center text-center">
 

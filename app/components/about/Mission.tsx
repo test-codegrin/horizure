@@ -5,8 +5,8 @@ import React from "react";
 
 export default function Mission() {
   return (
-    <section className="w-full bg-black text-white lg:py-20">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mx-6 sm:mx-10 md:mx-16 lg:mx-32 xl:mx-48 2xl:mx-60">
+    <section className="w-full bg-black text-white lg:py-20 lg:pl-1">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mx-4   sm:mx-10 md:mx-12 lg:mx-32 xl:mx-48 2xl:mx-60">
 
         {/* LEFT TEXT */}
         <div>
@@ -39,14 +39,14 @@ export default function Mission() {
 
         {/* RIGHT IMAGE  */}
         <div className="relative flex justify-center lg:justify-end">
-          <div className="relative p-4 w-fit">
+          <div className="relative w-fit">
 
 
             {/* Box Image */}
             <Image
               src="/aboutus/purple_boxes.png"  // <-- your boxes image
               alt="Cubes"
-              width={500}
+              width={505}
               height={500}
               className="object-contain"  
             />

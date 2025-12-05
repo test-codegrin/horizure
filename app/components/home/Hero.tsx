@@ -1,22 +1,18 @@
 "use client";
 
 import React from "react";
-import Plasma from "./Plasma";
+import DarkVeil from "./DarkVeil";
 
 function Hero() {
   return (
-    <div className="relative w-full min-h-screen bg-black overflow-hidden">
-      
+    <div className="relative w-full min-h-screen bg-black overflow-hidden ">
+
       {/* Background Effect */}
-      <div className="absolute inset-0 pointer-events-none select-none">
-        <Plasma 
-          color="#4000ff" 
-          speed={1} 
-          direction="forward" 
-          opacity={0.5} 
-          scale={2} 
-        />
+
+      <div style={{ width: '100%', height: '600px', position: 'relative' }}>
+        <DarkVeil />
       </div>
+
 
       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-6">

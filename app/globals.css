@@ -4,7 +4,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  
+
 }
 
 @theme inline {
@@ -190,4 +190,34 @@ body {
 
 
 
+/* ============================================= scroll-bar design ======================================================= */
+/* Width */
+::-webkit-scrollbar {
+  width: 3px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #0a0a0a; /* or any background you want */
+}
+
+/* Thumb (gradient using your color #0ea5e9) */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #0ea5e9,
+    #38bdf8,
+    #0ea5e9
+  );
+  
+}
+
+/* Hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    #38bdf8,
+    #0ea5e9,
+    #0284c7
+  );
+}

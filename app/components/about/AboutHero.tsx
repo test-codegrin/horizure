@@ -11,7 +11,7 @@ export default function AboutHero() {
       <div className="absolute right-0 top-0 w-[650px] h-[650px] bg-[#1e2737] rounded-full blur-[140px] opacity-60"></div>
 
       {/* Main content */}
-      <div className="relative mx-6 sm:mx-10 md:mx-16 lg:mx-32 xl:mx-48 2xl:mx-60 w-full">
+      <div className="relative mx-4 sm:mx-10 md:mx-16 lg:mx-32 xl:mx-48 2xl:mx-60 w-full">
         <div className="grid lg:grid-cols-2 gap-10 items-center h-full">
 
           {/* LEFT TEXT */}
@@ -31,7 +31,7 @@ export default function AboutHero() {
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="relative flex justify-center lg:justify-end h-full">
+          <div className="relative flex justify-center lg:justify-end h-full pl-2">
             <Image
               src="/aboutus/hero_phone_img.png"
               alt="Phone + Message"
@@ -56,7 +56,7 @@ export default function AboutHero() {
       <div className="animate-down-up-bounce hidden sm:block absolute left-20 top-[35%] w-12 h-12 bg-gradient-to-b from-[#68d1ff] to-[#007edb] 
         rounded-full "></div>
         {/* shadow below the left ball */}
-        <div className="shadow-bounce w-[140px] h-[18px]  absolute left-10 top-[63%] bg-white/40 rounded-full blur-[15px]"></div>
+        <div className="hidden sm:block   shadow-bounce w-[140px] h-[18px]  absolute left-10 lg:top-[63%] md:top-[77%] bg-white/40 rounded-full blur-[15px]"></div>
 
       {/* blue dot on the screen floating */}
       <div className="hidden sm:block absolute left-[24%] top-[55%] w-3 h-3 bg-[#1db3ff] rounded-full float-3"></div>
@@ -65,7 +65,7 @@ export default function AboutHero() {
       <div className="animate-down-up-bounce hidden sm:block absolute right-32 top-[20%] w-12 h-12 bg-gradient-to-b from-[#68d1ff] to-[#007edb] 
         rounded-full "></div>
         {/* shadow below the right ball */}
-        <div className="shadow-bounce w-[140px] h-[18px]  absolute right-19 top-[48%] bg-white/40 rounded-full blur-[15px]"></div>
+        <div className="hidden sm:block  shadow-bounce w-[140px] h-[18px]  absolute right-19 lg:top-[48%] md:top-[62%] bg-white/40 rounded-full blur-[15px]"></div>
 
       {/* floating star */}
       <div className="hidden sm:block absolute right-12 bottom-30 text-blue-400 text-5xl float-2">★</div>

@@ -19,7 +19,7 @@ export default function Ourjourney() {
 
 
       {/* ---- CONTENT ---- */}
-      <div className="relative z-10 text-center mx-6 sm:mx-10 md:mx-20 lg:mx-auto max-w-6xl py-20">
+      <div className="relative z-10 text-center mx-4 sm:mx-10 md:mx-20 lg:mx-auto max-w-6xl py-20">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-6 leading-snug">
           Our Journey{" "}
           <span className="text-[#0ea5e9]">

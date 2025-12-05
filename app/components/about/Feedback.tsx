@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Feedback() {
   return (
-    <section className="w-full bg-black text-white py-24 lg:px-11">
+    <section className="w-full bg-black text-white py-24 lg:px-12 ">
       {/* ---- HEADER ---- */}
       <div className="text-center max-w-3xl mx-auto mb-16 px-6">
         <h2 className="text-3xl sm:text-4xl font-semibold leading-snug">
@@ -20,7 +20,7 @@ export default function Feedback() {
       </div>
 
       {/* ---- GRID CONTAINER ---- */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mx-6 sm:mx-10 md:mx-16 lg:mx-32 xl:mx-48">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mx-4 sm:mx-10 md:mx-12 lg:mx-32 xl:mx-48">
         {/* ---- CARD COMPONENT ---- */}
         {feedbackData.map((item, index) => (
           <div
