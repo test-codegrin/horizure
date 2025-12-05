@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 
-// ---- Memoized Link List (prevents whole nav re-render) ----
+// ---- Memoized Link List ----
 interface NavLinksProps {
   pathname: string;
 }
@@ -15,19 +15,20 @@ const NavLinks = React.memo(function NavLinks({ pathname }: NavLinksProps) {
   const links = [
     { title: "HOME", href: "/" },
     { title: "SERVICES", href: "/services" },
-
     { title: "PORTFOLIO", href: "/portfolio" },
     { title: "BLOG", href: "/blog" },
-
     { title: "ABOUT US", href: "/about" },
-
     { title: "CONTACT US", href: "/contactus" },
   ];
 
   return (
     <ul className="hidden lg:flex space-x-8 text-sm tracking-wide">
       {links.map((item) => {
-        const active = pathname === item.href;
+        const active =
+          item.href === "/"
+            ? pathname === "/" // only homepage
+            : pathname.startsWith(item.href); // highlight nested routes
+
         return (
           <li key={item.title}>
             <Link
@@ -117,15 +118,19 @@ function Nav() {
               "/about",
               "/contactus",
             ].map((href, index) => {
-              const title = [
+              const titles = [
                 "HOME",
                 "SERVICES",
                 "PORTFOLIO",
                 "BLOGS",
                 "ABOUT US",
                 "CONTACT US",
-              ][index];
-              const active = pathname === href;
+              ];
+
+              const active =
+                href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(href);
 
               return (
                 <li key={href}>
@@ -137,7 +142,7 @@ function Nav() {
                         : "hover:text-blue-400 transition"
                     }
                   >
-                    {title}
+                    {titles[index]}
                   </Link>
                 </li>
               );
@@ -158,3 +163,4 @@ function Nav() {
 }
 
 export default React.memo(Nav);
+  

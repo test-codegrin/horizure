@@ -9,11 +9,11 @@ export default function Ourjourney() {
          {/* ---- BACKGROUND IMAGE ---- */}
       <div className="absolute inset-0 ">
         <Image
-          src="/aboutus/bg.png"   // <-- replace with your image
+          src="/aboutus/bg.png"   
           alt="Journey Background"
           fill
           priority
-          className="object-cover object-center"  // adjust opacity
+          className="object-cover object-center"  
         />
       </div>
 

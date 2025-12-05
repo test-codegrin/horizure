@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useRouter } from "next/navigation";
 
 /* ===============================
    Diamond Card (Memo + Optimized)
@@ -88,6 +89,7 @@ const bottomItems = [
 const allItems = [...topItems, ...bottomItems];
 
 export default function Services() {
+  const router  =useRouter();
   return (
     <section className="w-full bg-black text-white py-14 flex justify-center">
       <div className="w-full mx-4 sm:mx-6 md:mx-12 lg:mx-36 xl:mx-48 2xl:mx-60">
@@ -106,7 +108,7 @@ export default function Services() {
         {/* DESKTOP (lg+) */}
         <div className="hidden lg:block">
           {/* Top Row */}
-          <div className="grid grid-cols-5 gap-x-10 justify-items-center">
+          <div onClick={() => router.push("/services")} className="grid grid-cols-5 gap-x-10 justify-items-center">
             {topItems.map((t) => (
               <Diamond key={t} text={t} />
             ))}
@@ -125,7 +127,7 @@ export default function Services() {
           </div>
 
           {/* Bottom Row */}
-          <div className="grid grid-cols-4 lg:mx-32 relative -top-25 justify-items-center mt-4">
+          <div onClick={() => router.push("/services")} className="grid grid-cols-4 lg:mx-32 relative -top-25 justify-items-center mt-4">
             {bottomItems.map((t) => (
               <Diamond key={t} text={t} />
             ))}
@@ -133,21 +135,21 @@ export default function Services() {
         </div>
 
         {/* TABLET (md only) */}
-        <div className="hidden md:grid lg:hidden grid-cols-3 gap-y-26 gap-6 justify-items-center">
+        <div onClick={() => router.push("/services")} className="hidden md:grid lg:hidden grid-cols-3 gap-y-26 gap-6 justify-items-center">
           {allItems.map((t, i) => (
             <Diamond key={t + i} text={t} />
           ))}
         </div>
 
         {/* MOBILE */}
-        <div className="md:hidden grid grid-cols-2 px-8">
+        <div onClick={() => router.push("/services")} className="md:hidden grid grid-cols-2 px-8">
           <div className="flex flex-col gap-y-20">
             {topItems.map((t) => (
               <Diamond key={t} text={t} />
             ))}
           </div>
 
-          <div className="flex flex-col gap-y-20 mt-24">
+          <div onClick={() => router.push("/services")} className="flex flex-col gap-y-20 mt-24">
             {bottomItems.map((t) => (
               <Diamond key={t} text={t} />
             ))}

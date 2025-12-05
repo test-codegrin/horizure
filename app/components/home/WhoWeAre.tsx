@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 function WhoWeAre() {
+  const router = useRouter();
   return (
     <section className="w-full bg-black text-white py-24 flex justify-center">
       <div
@@ -72,7 +74,7 @@ function WhoWeAre() {
               </p>
 
               {/* Button */}
-              <button className="mt-4 border border-gray-500 hover:border-sky-400 hover:text-sky-400 px-6 py-2 rounded-md transition-all flex items-center space-x-2 w-fit text-sm">
+              <button onClick={() => router.push("/about")} className="mt-4 border border-gray-500 hover:border-sky-400 hover:text-sky-400 px-6 py-2 rounded-md transition-all flex items-center space-x-2 w-fit text-sm">
                 <span>Who We Are</span>
                 <span className="text-lg">→</span>
               </button>

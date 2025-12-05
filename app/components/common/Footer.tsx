@@ -54,19 +54,20 @@ function Footer() {
 
   return (
     <footer className="w-full bg-black text-white pt-16 pb-10 border-t border-white/20">
-
       <div className="mx-4 sm:mx-6 md:mx-10 lg:mx-36 xl:mx-48 2xl:mx-60">
 
         {/* TOP GRID */}
-        <div className="
-          grid 
-          grid-cols-1 
-          sm:grid-cols-2 
-          md:grid-cols-3 
-          lg:grid-cols-4 
-          xl:grid-cols-6 
-          gap-10
-        ">
+        <div
+          className="
+            grid 
+            grid-cols-1 
+            sm:grid-cols-2 
+            md:grid-cols-3 
+            lg:grid-cols-4 
+            xl:grid-cols-6 
+            gap-10
+          "
+        >
 
           {/* LOGO + SOCIAL */}
           <div className="col-span-1 xl:col-span-2 flex flex-col items-center xl:items-start">
@@ -93,7 +94,10 @@ function Footer() {
 
             <ul className="space-y-2 text-sm text-gray-300">
               {PAGES.map((page) => {
-                const isActive = pathname === page.path;
+                const isActive =
+                  page.path === "/"
+                    ? pathname === "/"
+                    : pathname.startsWith(page.path);
 
                 return (
                   <li key={page.name}>
@@ -149,8 +153,12 @@ function Footer() {
           <div className="text-center sm:text-left xl:col-span-1">
             <h3 className="font-semibold mb-4 text-sm">Contact Information</h3>
 
-            <p className="text-sm text-gray-300 mb-2 hover:text-blue-400">+91 96541 12345</p>
-            <p className="text-sm text-gray-300 mb-2 hover:text-blue-400">infogaugranth@gmail.com</p>
+            <p className="text-sm text-gray-300 mb-2 hover:text-blue-400">
+              +91 96541 12345
+            </p>
+            <p className="text-sm text-gray-300 mb-2 hover:text-blue-400">
+              infogaugranth@gmail.com
+            </p>
             <p className="text-sm text-gray-300 mb-5 hover:text-blue-400 leading-relaxed">
               Street no. 30, Alap Road, Ahmedabad, India
             </p>
@@ -171,17 +179,23 @@ function Footer() {
         </div>
 
         {/* BOTTOM BAR */}
-        <div className="
-          mt-12 pt-6 border-t border-white/20 
-          flex flex-col md:flex-row 
-          items-center justify-between 
-          text-xs text-gray-400 gap-4
-        ">
+        <div
+          className="
+            mt-12 pt-6 border-t border-white/20 
+            flex flex-col md:flex-row 
+            items-center justify-between 
+            text-xs text-gray-400 gap-4
+          "
+        >
           <p>Company Name . ©2025 KINS All rights reserved.</p>
 
           <div className="flex flex-wrap gap-6 justify-center md:justify-end">
             {BOTTOM_LINKS.map((link) => (
-              <a key={link} href="#" className="hover:text-white transition-all duration-200">
+              <a
+                key={link}
+                href="#"
+                className="hover:text-white transition-all duration-200"
+              >
                 {link}
               </a>
             ))}

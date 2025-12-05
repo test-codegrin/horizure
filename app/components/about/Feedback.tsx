@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { feedbackData } from "@/app/components/constant/Data"
 
 export default function Feedback() {
   return (
@@ -68,58 +69,4 @@ export default function Feedback() {
   );
 }
 
-/* ---- FEEDBACK DATA ---- */
-const feedbackData = [
-  {
-    title:
-      "Horizure has been Instrumental in Transforming our Online Presence.",
-    description:
-      "Their team's expertise in web development and design resulted in a visually stunning and user-friendly e-commerce platform. Our online sales have skyrocketed, and we couldn't be happier.",
-    name: "John Smith",
-    role: "CEO of Chic Boutique",
-    avatar: "/homePage/Ellipse-1.webp",
-  },
-  {
-    title: "Working with horizure was a breeze.",
-    description:
-      "They understood our vision for a mobile app that streamlined our food delivery service. The app they delivered exceeded our expectations, and our customers love the seamless ordering experience.",
-    name: "Sarah Johnson",
-    role: "Founder of HungryBites.",
-    avatar: "/homePage/Ellipse-1.webp",
-  },
-  {
-    title:
-      "Horizure developed a comprehensive booking and reservation system for our event management company",
-    description:
-      "Their attention to detail and commitment to delivering a user-friendly platform was evident. The system has streamlined our operations and enhanced our clients’ event experiences.",
-    name: "Mark Thompson",
-    role: "CEO of EventSisters",
-    avatar: "/homePage/Ellipse-1.webp",
-  },
-  {
-    title: "ProTech Solutions turned to horizoure to automate our workflow",
-    description:
-      "They delivered an exceptional custom software solution. The system has significantly increased our productivity and reduced manual errors.",
-    name: "Laura Adams",
-    role: "CEO of ProTech Solutions.",
-    avatar: "/homePage/Ellipse-1.webp",
-  },
-  {
-    title:
-      "Horizure designed and developed a captivating web portal for showcasing real estate listings.",
-    description:
-      "The platform is visually appealing and easy to navigate. Horizure's expertise in the real estate sector is unmatched.",
-    name: "Michael Anderson",
-    role: "Founder of DreamHomes Realty.",
-    avatar: "/homePage/Ellipse-1.webp",
-  },
-  {
-    title:
-      "FitLife Tracker wanted a mobile app that tracked fitness activities and provided personalized workout plans.",
-    description:
-      "Horizure's team built an intuitive and feature-rich app that has helped users stay motivated and achieve their fitness goals.",
-    name: "Emily Turner",
-    role: "CEO of FitLife Tracker",
-    avatar: "/homePage/Ellipse-1.webp",
-  },
-];
+

@@ -1,8 +1,12 @@
-// "use client";
+"use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+
 
 export default function Articles() {
+  const router = useRouter();
   return (
+    
     <section className="relative w-full bg-black text-white overflow-hidden">
 
       {/* Rings — show ONLY on lg+ */}
@@ -59,7 +63,7 @@ export default function Articles() {
           </div>
 
           {/* COLUMN 2 - Has 3 Rows*/}
-          <div className="flex flex-col w-80 relative -left-30">
+          <div className="flex flex-col w-80 relative -left-31">
             {/* Comp1  for Border*/}
             <div
               className="
@@ -100,7 +104,7 @@ export default function Articles() {
           <div className="flex flex-col mt-40">
             <div
               className="
-                relative shadow h-80 w-160 -left-65 p-6
+                relative shadow h-80 w-160 -left-67 p-6
                 before:content-[''] before:absolute before:top-0 before:left-0 
                 before:w-full before:h-[2px]
                 before:bg-gradient-to-l before:from-transparent before:to-white
@@ -126,7 +130,7 @@ export default function Articles() {
                   </p>
                 </div>
                 {/* Read More Button */}
-                <button className="border border-gray-500 hover:border-sky-400 hover:text-sky-400 px-6 py-2 rounded-md transition-all flex items-center space-x-2 w-fit text-sm">Read More <span className="text-lg">→</span></button>
+                <button  onClick={() => router.push("/blog")} className="border border-gray-500 hover:border-sky-400 hover:text-sky-400 px-6 py-2 rounded-md transition-all flex items-center space-x-2 w-fit text-sm">Read More <span className="text-lg">→</span></button>
               </div>
             </div>
           </div>
