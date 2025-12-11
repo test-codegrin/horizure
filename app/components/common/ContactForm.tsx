@@ -10,7 +10,7 @@ export default function ContactForm() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [showSuccessText, setShowSuccessText] = useState(false); 
 
-  const GIF_DURATION = 1500; // ← duration of your success.gif in ms
+  const GIF_DURATION = 2000; // ← duration of your success.gif in ms
 
   const handlePhoneInput = (e: React.FormEvent<HTMLInputElement>) => {
     const value = e.currentTarget.value.replace(/\D/g, "").slice(0, 10);
@@ -52,8 +52,9 @@ export default function ContactForm() {
         <div className="w-full h-[350px] flex flex-col items-center justify-center rounded-2xl bg-gradient-to-b from-white to-blue-400 text-center">
 
           <Image
-            src="/homePage/success.gif"
+            src="/homePage/Success1.gif"
             alt="Success"
+            unoptimized
             width={150}
             height={150}
           />
